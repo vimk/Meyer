@@ -1,5 +1,5 @@
 // svarer til en terninge klasse 
-package meyer;
+package dk.vimk.meyer;
 
 import java.util.Random;
 
@@ -17,7 +17,7 @@ public class Die
         roll(); 
     }
     
-        public int getValue () //metode med returværdi
+        public int getValue () //metode med returv??rdi
         {
             return value;         
         }        
