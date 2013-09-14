@@ -52,7 +52,7 @@ public class Cup
     
     public static String valueToString(int value)
     {
-        String result = "ugyldig v??rdi";
+        String result = "invalid value";
         if (value == 100) 
         {
             result = "Meyer";
