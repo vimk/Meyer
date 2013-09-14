@@ -1,4 +1,4 @@
-package dk.vimk;
+package dk.vimk.meyer;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
@@ -31,8 +31,16 @@ public class AppTest
     /**
      * Rigourous Test :-)
      */
-    public void testApp()
+    public void testCorrectNumberOfPlayers()
     {
-        assertTrue( true );
+        Meyer meyer = new Meyer();
+        
+        Player human = new Player();
+        meyer.addPlayer(human);
+        
+        Player computer = new Player();
+        meyer.addPlayer(computer);
+        
+        assertEquals(2, meyer.numberOfPlayers());
     }
 }

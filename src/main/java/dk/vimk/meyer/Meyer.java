@@ -1,23 +1,29 @@
 // opgave 3 fra klasser og kontrolstrukturer fortsat - opbygning af spillet meyer med forenklede regler 
 
 package dk.vimk.meyer;
+
+import java.util.ArrayList;
+
 /**
  
  * @author Kim Vammen
  */
 public class Meyer
-{  
-    private static Player computer;
-    private static Player menneske;
-
+{
+	private ArrayList<Player> players = new ArrayList<Player>();
     
-    public static void main(String[] args)
+    public void addPlayer(Player player)
     {
-        computer = new Player();
-        menneske = new Player();
-
-        computer.shake();
-         
-        
+    	players.add(player);
+    }
+    
+    public void removePlayer(Player player)
+    {
+    	players.remove(player);
+    }
+    
+    public int numberOfPlayers()
+    {
+    	return players.size();
     }
 }
