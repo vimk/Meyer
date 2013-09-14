@@ -1,5 +1,5 @@
-//raflebægre 
-package meyer;
+//rafleb??gre 
+package dk.vimk.meyer;
 
 /**
  *
@@ -52,7 +52,7 @@ public class Cup
     
     public static String valueToString(int value)
     {
-        String result = "ugyldig værdi";
+        String result = "invalid value";
         if (value == 100) 
         {
             result = "Meyer";

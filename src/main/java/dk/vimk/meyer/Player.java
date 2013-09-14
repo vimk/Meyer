@@ -1,5 +1,5 @@
 // Spiller
-package meyer;
+package dk.vimk.meyer;
 
 import java.util.Random;
 
@@ -10,31 +10,31 @@ import java.util.Random;
 public class Player
 {
     private int point;
-    private Cup bægre; 
+    private Cup cups; 
     
     public Player()
     {
-        bægre = new Cup();
+    	cups = new Cup();
         point = 0; 
     }
     
         public void shake()
             {
-                bægre.shake();
+        	cups.shake();
             }
         public int getValue()
         {
-            return bægre.getValue();
+            return cups.getValue();
         }
         public int cheat(int cheatValue)
         {           
             Random ran = new Random();
-            cheatValue = ran.nextInt(35)+66; //får en tilfældig værdi mellem 0 og 35, men ligger 66 til for at få mit tilfældige tal mellem 66 og 100
-            String check = bægre.valueToString(cheatValue);
-            while (!check.equalsIgnoreCase("ugyldig værdi"))
+            cheatValue = ran.nextInt(35)+66; //f??r en tilf??ldig v??rdi mellem 0 og 35, men ligger 66 til for at f?? mit tilf??ldige tal mellem 66 og 100
+            String check = cups.valueToString(cheatValue);
+            while (!check.equalsIgnoreCase("ugyldig v??rdi"))
                     {
                         cheatValue = ran.nextInt(35)+66;
-                        check = bægre.valueToString(cheatValue);
+                        check = cups.valueToString(cheatValue);
                     }
             
             return cheatValue;
@@ -44,7 +44,7 @@ public class Player
             int value;
             if (playValue < 66) 
                     {
-                        bægre.shake();
+            			cups.shake();
                         value = getValue();
                         if (value < playValue)
                         {
