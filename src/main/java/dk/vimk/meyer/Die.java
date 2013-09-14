@@ -17,14 +17,19 @@ public class Die
         roll(); 
     }
     
-        public int getValue () //metode med returv??rdi
-        {
-            return value;         
-        }        
-            public void roll () //kaster terningen
-            {
-                Random ran = new Random ();
-                value = ran.nextInt(MAX_VALUE) + 1;
-            }
-            
+    public int getValue () //metode med returv??rdi
+    {
+        return value;         
+    }
+    
+    public void setValue(int newValue)
+    {
+        value = newValue;
+    }
+
+    public void roll () //kaster terningen
+    {
+        Random ran = new Random ();
+        value = ran.nextInt(MAX_VALUE) + 1;
+    }
 }

@@ -7,25 +7,35 @@ package dk.vimk.meyer;
  */
 public class Cup
 {
-    private Die terning1;
-    private Die terning2;
+    private Die die1;
+    private Die die2;
 
     public Cup()
     {
-        terning1 = new Die();
-        terning2 = new Die();
+        die1 = new Die();
+        die2 = new Die();
+    }
+    
+    Die getDie1()
+    {
+        return die1;
+    }
+    
+    Die getDie2()
+    {
+        return die2;
     }
 
     public void shake()
     {
-        terning1.roll();
-        terning2.roll();
+        die1.roll();
+        die2.roll();
     }
 
     public int getValue()
     {
-        int value1 = terning1.getValue();
-        int value2 = terning2.getValue();
+        int value1 = die1.getValue();
+        int value2 = die2.getValue();
         int result;
 
         if ((value1 == 1 && value2 == 2) || (value1 == 2 && value2 == 1))
@@ -52,44 +62,46 @@ public class Cup
     
     public static String valueToString(int value)
     {
-        String result = "invalid value";
+        String result;
+        
         if (value == 100) 
         {
             result = "Meyer";
         }         
-            else if (value == 80)
-            {
-                result = "Lille meyer";
-            }
-            else if (value == 77)
-            {    
-                result = "Par 6";
-            }
-            else if (value == 75)
-            {
-                result = "Par 5";
-            }
-            else if (value == 73)
-            {
-                result = "Par 4";
-            }
-            else if (value == 71)
-            {
-                result = "Par 3";
-            }
-            else if (value == 69)
-            {
-                result = "Par 2";
-            }
-            else if (value == 67)
-            {
-                result = "Par 1";
-            }
-            else 
-            {
-                result = ""+value;
-            }
-       return result;
+        else if (value == 80)
+        {
+            result = "Lille meyer";
+        }
+        else if (value == 77)
+        {    
+            result = "Par 6";
+        }
+        else if (value == 75)
+        {
+            result = "Par 5";
+        }
+        else if (value == 73)
+        {
+            result = "Par 4";
+        }
+        else if (value == 71)
+        {
+            result = "Par 3";
+        }
+        else if (value == 69)
+        {
+            result = "Par 2";
+        }
+        else if (value == 67)
+        {
+            result = "Par 1";
+        }
+        else 
+        {
+            result = String.valueOf(value);
+        }
+        
+        return result;
     }
 }
 

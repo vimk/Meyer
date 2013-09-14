@@ -10,52 +10,53 @@ import java.util.Random;
 public class Player
 {
     private int point;
-    private Cup cups; 
+    private Cup cup; 
     
     public Player()
     {
-    	cups = new Cup();
+    	cup = new Cup();
         point = 0; 
     }
     
         public void shake()
             {
-        	cups.shake();
+        	cup.shake();
             }
         public int getValue()
         {
-            return cups.getValue();
+            return cup.getValue();
         }
-        public int cheat(int cheatValue)
+        public int cheat()
         {           
             Random ran = new Random();
-            cheatValue = ran.nextInt(35)+66; //f??r en tilf??ldig v??rdi mellem 0 og 35, men ligger 66 til for at f?? mit tilf??ldige tal mellem 66 og 100
-            String check = cups.valueToString(cheatValue);
-            while (!check.equalsIgnoreCase("ugyldig v??rdi"))
-                    {
-                        cheatValue = ran.nextInt(35)+66;
-                        check = cups.valueToString(cheatValue);
-                    }
-            
+            int cheatValue = ran.nextInt(35)+66; //f??r en tilf??ldig v??rdi mellem 0 og 35, men ligger 66 til for at f?? mit tilf??ldige tal mellem 66 og 100
+            String check = cup.valueToString(cheatValue);
             return cheatValue;
         }
+        
         public int play(int playValue)
         {
             int value;
+            
             if (playValue < 66) 
-                    {
-            			cups.shake();
-                        value = getValue();
-                        if (value < playValue)
-                        {
-                            value = cheat(playValue);
-                        }
-                    }
+            {
+                cup.shake();
+                value = getValue();
+                if (value < playValue)
+                {
+                    value = cheat();
+                }
+            }
             else 
             {
-                value =0;
+                value = 0;
             } 
             return value;
         }   
+
+    Cup getCup()
+    {
+        return cup;
+    }
 }
 

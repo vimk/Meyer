@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class Meyer
 {
-	private ArrayList<Player> players = new ArrayList<Player>();
+    private ArrayList<Player> players = new ArrayList<Player>();
     
     public void addPlayer(Player player)
     {
@@ -25,5 +25,10 @@ public class Meyer
     public int numberOfPlayers()
     {
     	return players.size();
+    }
+
+    Player getPlayer(int i)
+    {
+        return players.get(i);
     }
 }
