@@ -31,4 +31,10 @@ public class Meyer
     {
         return players.get(i);
     }
+    
+    public void turn()
+    {
+        
+        //skrive en metode der holder styr på hvis tur det er. 
+    }
 }
